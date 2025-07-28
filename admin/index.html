@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .auth-info {
+      background: #f0f8ff;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 8px;
+      border-left: 4px solid #007acc;
+      display: none;
+    }
+    .auth-info h3 {
+      margin-top: 0;
+      color: #007acc;
+    }
+    .auth-info code {
+      background: #e1e1e1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-info" id="auth-info">
+    <h3>🔐 Authentication Required</h3>
+    <p><strong>To log in, you'll need:</strong></p>
+    <ol>
+      <li>Your GitHub username</li>
+      <li>A GitHub Personal Access Token (not your password)</li>
+    </ol>
+    <p><a href="https://github.com/settings/tokens" target="_blank" rel="noopener">→ Create Personal Access Token</a></p>
+    <p><small>Required scope: <code>repo</code> (Full control of private repositories)</small></p>
+    <hr>
+    <p><strong>Instructions:</strong></p>
+    <ul>
+      <li>Username: Your GitHub username</li>
+      <li>Password: Your Personal Access Token (starts with <code>ghp_</code>)</li>
+    </ul>
+  </div>
+
+  <script>
+    // Show authentication info when CMS loads
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const authInfo = document.getElementById('auth-info');
+        if (authInfo) {
+          authInfo.style.display = 'block';
+        }
+      }, 1000);
+    });
+  </script>
+
+  <!-- Decap CMS -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>
