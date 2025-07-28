@@ -17,6 +17,8 @@ collections:
     output: true
     permalink: /:name/
 
+include: ["admin"]
+
 # Exclude files from processing
 exclude:
   - .sass-cache/
