@@ -17,7 +17,17 @@ collections:
     output: true
     permalink: /:name/
 
-include: ["admin"]
+# Explicitly include admin directory and YAML files
+include: 
+  - admin
+  - admin/config.yml
+
+# Allow Jekyll to serve YAML files
+defaults:
+  - scope:
+      path: "admin"
+    values:
+      layout: null
 
 # Exclude files from processing
 exclude:
